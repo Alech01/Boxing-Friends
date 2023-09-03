@@ -129,3 +129,18 @@ MainTab:AddToggle({
         end
     end
 })
+MainTab:AddToggle({
+    Name = "Kill",
+    Default = false,
+    Callback = function(Value)
+        _G.skipfight = Value
+        while _G.skipfight and task.wait() do
+            local args = {
+                [1] = "Kill",
+                [2] = "Level 19"
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("NPC"):FireServer(unpack(args))
+        end
+    end
+})
