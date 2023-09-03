@@ -107,6 +107,21 @@ MainTab:AddToggle({
         while _G.skipfight and task.wait() do
             local args = {
                 [1] = "Hell",
+                [2] = 1
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("HatchEgg"):InvokeServer(unpack(args))
+        end
+    end
+})
+MainTab:AddToggle({
+    Name = "Basic Egg",
+    Default = false,
+    Callback = function(Value)
+        _G.skipfight = Value
+        while _G.skipfight and task.wait() do
+            local args = {
+                [1] = "Basic",
                 [2] = 2
             }
 
