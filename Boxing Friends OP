@@ -19,7 +19,7 @@ local EggTab = Window:MakeTab({
 })
 
 -- Elements
-MainTab:AddParagraph("Created By:", "Stronk")
+MainTab:AddParagraph("Created By:", "Panchas")
 
 -- Main
 local autoPunchEnabled = false
